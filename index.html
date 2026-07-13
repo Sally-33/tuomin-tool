@@ -69,12 +69,25 @@ input[type="text"]:focus { outline: none; border-color: #60a5fa; }
 <!-- ====== 使用指南 ====== -->
 <div class="guide">
 <h3>使用说明</h3>
+<p style="font-size:13px;color:#60a5fa;margin-bottom:10px;">先看自己属于哪种情况：</p>
+
+<div class="note" style="margin-bottom:12px;border-left-color:#3b82f6;">
+<strong>情况A：你只用了网页版AI（豆包/DeepSeek/通义千问等），电脑没装Agent</strong><br>
+直接按下面步骤操作就行，不需要关闭任何程序。
+</div>
+
+<div class="note" style="margin-bottom:12px;border-left-color:#f97316;">
+<strong>情况B：你电脑装了本地Agent（Hermes/OpenCode/WorkBuddy等）</strong><br>
+操作前先退出Agent，操作完再重新打开。
+</div>
+
 <ol>
-<li><strong>关闭本地Agent</strong>（如果装了Hermes、OpenCode等本地程序。没装则跳过。）</li>
+<li><strong>【情况B专用】退出本地Agent</strong>（关掉终端窗口/右键退出。情况A跳过此步。）</li>
 <li><strong>设置敏感词表</strong> → 切换到「敏感词表」标签，填入要替换的词和代号。</li>
 <li><strong>替换</strong> → 粘贴原文（只支持纯文本，不支持图片）→ 点「替换敏感词」。</li>
 <li><strong>发AI润色</strong> → 复制脱敏文本，粘贴到AI工具中润色。</li>
 <li><strong>还原</strong> → 复制AI返回 → 切到「还原」标签 → 粘贴 → 点「还原原文」。</li>
+<li><strong>【情况B专用】重新打开Agent</strong>（上面的操作Agent完全不知道。）
 <li><strong>收工。</strong></li>
 </ol>
 <div class="note" style="margin-top:12px;">
@@ -85,7 +98,7 @@ input[type="text"]:focus { outline: none; border-color: #60a5fa; }
 </div>
 <div class="note" style="margin-top:8px;">
 <strong>支持多长的文本？</strong> 没有字数限制，但建议单次不超过 <strong>5万字</strong>，否则浏览器可能卡顿。<br>
-<strong>数据安全：</strong> 所有操作在你电脑浏览器里完成，不上传服务器，不联网。
+<strong>机制说明：</strong> 页面发布在GitHub Pages，你打开时浏览器从GitHub下载HTML文件到本地运行。替换和还原在浏览器里完成，数据不上传任何服务器。退出Agent期间的操作，Agent完全不知道。
 </div>
 </div>
 
