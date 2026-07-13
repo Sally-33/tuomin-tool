@@ -61,20 +61,33 @@ input[type="text"]:focus { outline: none; border-color: #60a5fa; }
 
 <h1>脱敏小工具</h1>
 <p class="sub">把敏感词替换成代号 → 发AI润色 → 一键还原 | 纯本地运行，数据不上传</p>
+<p style="font-size:12px;color:#64748b;margin-bottom:16px;line-height:1.5;">
+📌 这个页面发布在 GitHub Pages 上，你打开时浏览器从GitHub下载了这个HTML文件到你的电脑上运行。<br>
+每次更新都是覆盖，始终保持最新版。<strong>运行占用的内存是你自己电脑的内存，不是服务器。</strong>关掉页面就释放了。
+</p>
 
 <!-- ====== 使用指南 ====== -->
 <div class="guide">
-<h3>使用指南（七步流程）</h3>
+<h3>使用说明</h3>
 <ol>
-<li><strong>关闭本地Agent</strong>（如果你装了Hermes、OpenCode、Cursor、WorkBuddy等本地运行的程序，建议先退出。没装则跳过此步。）</li>
-<li><strong>自定义敏感词表</strong> → 切换到「敏感词表」标签，把你要替换的词和对应的代号填进去。比如：张三 → 【客户甲】</li>
-<li><strong>准备要润色的文字</strong> → 这个工具只处理纯文本<strong>（.txt / .md / 文档中复制出来的文字）</strong>。<br>PPT / Word / Excel 等文件请先打开复制文字内容再粘贴进来。不支持图片、扫描件。</li>
-<li><strong>替换</strong> → 切换到「替换」标签，粘贴原文，点击「替换敏感词」，系统会自动把敏感词换成代号。</li>
-<li><strong>发给AI</strong> → 点击「复制」，将脱敏后的文本粘贴到 DeepSeek / ChatGPT / 通义千问等AI工具中润色。</li>
-<li><strong>还原</strong> → 切换到「还原」标签，粘贴AI返回的润色文本，点击「还原原文」。代号会自动变回原词。</li>
-<li><strong>收工</strong> → 复制最终稿。</li>
+<li><strong>关闭本地Agent</strong>（如果装了Hermes、OpenCode等本地程序。没装则跳过。）</li>
+<li><strong>设置敏感词表</strong> → 切换到「敏感词表」标签，填入要替换的词和代号。</li>
+<li><strong>准备文本</strong> → 只支持纯文本。<strong>不支持图片、扫描件。</strong>PPT/Word/Excel请先复制文字再粘贴。</li>
+<li><strong>替换</strong> → 粘贴原文 → 点「替换敏感词」。</li>
+<li><strong>发AI润色</strong> → 复制脱敏文本，粘贴到AI工具中润色。</li>
+<li><strong>还原</strong> → 复制AI返回 → 切到「还原」标签 → 粘贴 → 点「还原原文」。</li>
+<li><strong>收工。</strong></li>
 </ol>
-<div class="note">💡 安全提醒：替换和还原两步在浏览器里操作，不要交给Agent代劳。关掉页面后本地不留下任何记录。</div>
+<div class="note" style="margin-top:12px;">
+<strong>关于敏感词表：</strong><br>
+• 长期复用：配好后关掉页面，下次打开还在（存在浏览器本地）。<br>
+• 一次性使用：用完关掉页面即可，不保存。<br>
+• 分享：先把词表清空，避免自己的敏感词一起传出去。
+</div>
+<div class="note" style="margin-top:8px;">
+<strong>支持多长的文本？</strong> 没有字数限制，但建议单次不超过 <strong>5万字</strong>，否则浏览器可能卡顿。<br>
+<strong>数据安全：</strong> 所有操作在你电脑浏览器里完成，不上传服务器，不联网。
+</div>
 </div>
 
 <!-- ====== 操作面板 ====== -->
