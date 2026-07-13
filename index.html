@@ -3,13 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>脱敏小工具</title>
+<title>脱敏小工具 - 使用指南</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, "Microsoft YaHei", sans-serif; background: #0f172a; color: #e2e8f0; padding: 20px; }
-.container { max-width: 900px; margin: 0 auto; }
+.container { max-width: 920px; margin: 0 auto; }
 h1 { font-size: 24px; margin-bottom: 4px; color: #60a5fa; }
-.sub { color: #94a3b8; font-size: 14px; margin-bottom: 20px; }
+h2 { font-size: 18px; margin: 20px 0 10px; color: #f1f5f9; }
+.sub { color: #94a3b8; font-size: 14px; margin-bottom: 16px; }
+
+/* 使用指南 */
+.guide { background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 20px; margin-bottom: 20px; }
+.guide h3 { font-size: 15px; color: #60a5fa; margin-bottom: 6px; }
+.guide ol { padding-left: 20px; }
+.guide li { font-size: 13px; color: #cbd5e1; line-height: 1.8; margin-bottom: 4px; }
+.guide .note { font-size: 12px; color: #64748b; margin-top: 8px; padding: 8px 12px; background: #0f172a; border-radius: 6px; border-left: 3px solid #475569; }
+
+/* 免责声明 */
+.disclaimer { background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 16px 20px; margin-top: 20px; }
+.disclaimer h3 { font-size: 14px; color: #fbbf24; margin-bottom: 8px; }
+.disclaimer p { font-size: 12px; color: #94a3b8; line-height: 1.6; margin-bottom: 4px; }
+.disclaimer strong { color: #f87171; }
+
 .row { display: flex; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
 .btn { padding: 10px 24px; border: none; border-radius: 8px; font-size: 15px; cursor: pointer; font-weight: bold; }
 .btn-primary { background: #3b82f6; color: #fff; }
@@ -18,9 +33,10 @@ h1 { font-size: 24px; margin-bottom: 4px; color: #60a5fa; }
 .btn-success:hover { background: #16a34a; }
 .btn-outline { background: transparent; color: #94a3b8; border: 1px solid #475569; }
 .btn-outline:hover { background: #1e293b; }
+
 textarea { width: 100%; padding: 16px; border: 1px solid #334155; border-radius: 8px; background: #1e293b; color: #e2e8f0; font-size: 14px; line-height: 1.6; resize: vertical; font-family: inherit; }
 textarea:focus { outline: none; border-color: #60a5fa; }
-.output-area { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 16px; min-height: 100px; font-size: 14px; line-height: 1.6; white-space: pre-wrap; word-break: break-word; }
+.output-area { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 16px; min-height: 80px; font-size: 14px; line-height: 1.6; white-space: pre-wrap; word-break: break-word; }
 .label { font-size: 12px; color: #64748b; margin-bottom: 4px; }
 .tab { display: flex; gap: 4px; margin-bottom: 12px; }
 .tab button { padding: 6px 16px; border: 1px solid #334155; background: transparent; color: #94a3b8; border-radius: 6px 6px 0 0; cursor: pointer; font-size: 13px; }
@@ -42,13 +58,30 @@ input[type="text"]:focus { outline: none; border-color: #60a5fa; }
 </head>
 <body>
 <div class="container">
-<h1>脱敏小工具</h1>
-<p class="sub">把敏感词替换成代号 → 发AI润色 → 一键还原 | 纯本地，不联网，文件不会上传</p>
 
+<h1>脱敏小工具</h1>
+<p class="sub">把敏感词替换成代号 → 发AI润色 → 一键还原 | 纯本地运行，数据不上传</p>
+
+<!-- ====== 使用指南 ====== -->
+<div class="guide">
+<h3>使用指南（七步流程）</h3>
+<ol>
+<li><strong>关闭本地Agent</strong>（如果你装了Hermes、OpenCode、Cursor、WorkBuddy等本地运行的程序，建议先退出。没装则跳过此步。）</li>
+<li><strong>自定义敏感词表</strong> → 切换到「敏感词表」标签，把你要替换的词和对应的代号填进去。比如：张三 → 【客户甲】</li>
+<li><strong>准备要润色的文字</strong> → 这个工具只处理纯文本<strong>（.txt / .md / 文档中复制出来的文字）</strong>。<br>PPT / Word / Excel 等文件请先打开复制文字内容再粘贴进来。不支持图片、扫描件。</li>
+<li><strong>替换</strong> → 切换到「替换」标签，粘贴原文，点击「替换敏感词」，系统会自动把敏感词换成代号。</li>
+<li><strong>发给AI</strong> → 点击「复制」，将脱敏后的文本粘贴到 DeepSeek / ChatGPT / 通义千问等AI工具中润色。</li>
+<li><strong>还原</strong> → 切换到「还原」标签，粘贴AI返回的润色文本，点击「还原原文」。代号会自动变回原词。</li>
+<li><strong>收工</strong> → 复制最终稿。</li>
+</ol>
+<div class="note">💡 安全提醒：替换和还原两步在浏览器里操作，不要交给Agent代劳。关掉页面后本地不留下任何记录。</div>
+</div>
+
+<!-- ====== 操作面板 ====== -->
 <div class="tab">
-<button class="active" onclick="switchTab('replace')">替换</button>
-<button onclick="switchTab('restore')">还原</button>
-<button onclick="switchTab('config')">敏感词表</button>
+<button class="active" onclick="switchTab('replace')">🔒 替换</button>
+<button onclick="switchTab('restore')">↩️ 还原</button>
+<button onclick="switchTab('config')">⚙️ 敏感词表</button>
 </div>
 
 <!-- 替换 -->
@@ -56,7 +89,7 @@ input[type="text"]:focus { outline: none; border-color: #60a5fa; }
 <div class="label">输入原文（含敏感词）</div>
 <textarea id="input-text" rows="6" placeholder="在此粘贴需要脱敏的文本..."></textarea>
 <div class="row" style="margin-top: 12px;">
-<button class="btn btn-primary" onclick="doReplace()">🔒 替换敏感词</button>
+<button class="btn btn-primary" onclick="doReplace()">替换敏感词</button>
 <button class="btn btn-outline" onclick="clearText()">清空</button>
 </div>
 <div class="output-wrap" id="replace-result-wrap" style="display:none;">
@@ -68,10 +101,10 @@ input[type="text"]:focus { outline: none; border-color: #60a5fa; }
 
 <!-- 还原 -->
 <div id="panel-restore" class="panel">
-<div class="label">粘贴AI返回的文本</div>
+<div class="label">粘贴AI返回的润色文本</div>
 <textarea id="restore-input" rows="6" placeholder="把AI润色后的文本贴到这里还原..."></textarea>
 <div class="row" style="margin-top: 12px;">
-<button class="btn btn-success" onclick="doRestore()">↩️ 还原原文</button>
+<button class="btn btn-success" onclick="doRestore()">还原原文</button>
 </div>
 <div class="output-wrap" id="restore-result-wrap" style="display:none;">
 <div class="label">还原后（最终稿）</div>
@@ -82,7 +115,7 @@ input[type="text"]:focus { outline: none; border-color: #60a5fa; }
 
 <!-- 配置 -->
 <div id="panel-config" class="panel">
-<p style="color:#94a3b8;font-size:13px;margin-bottom:12px;">左边写原词，右边写替换后的代号。改完自动保存。</p>
+<p style="color:#94a3b8;font-size:13px;margin-bottom:12px;">左边写原词，右边写替换后的代号。改完自动保存到本地，下次打开还在。</p>
 <table id="config-table">
 <thead><tr><th style="width:40%">原词</th><th style="width:40%">替换为</th><th style="width:20%">操作</th></tr></thead>
 <tbody id="config-body"></tbody>
@@ -94,11 +127,20 @@ input[type="text"]:focus { outline: none; border-color: #60a5fa; }
 </div>
 </div>
 
-<div class="footer">全部在浏览器本地运行，数据不上传服务器</div>
+<!-- ====== 免责声明 ====== -->
+<div class="disclaimer">
+<h3>免责声明</h3>
+<p>1. 本工具仅供<strong>个人非商业用途</strong>。未经授权，禁止用于商业目的。</p>
+<p>2. <strong>涉密不上网。</strong> 本工具适用于一般性敏感信息（如客户名、公司名、项目名等）的脱敏处理。对于国家秘密、商业秘密、个人隐私等需要严格保密的内容，不适合使用本工具，请遵守相关法律法规。</p>
+<p>3. 本工具为纯本地运行，数据在浏览器中处理，不上传任何服务器。但用户应自行评估使用环境的安全性（如是否安装了可读取本地文件的第三方程序）。</p>
+<p>4. 使用本工具产生的任何后果由用户自行承担。作者不对因使用本工具导致的任何信息泄露或其他损失负责。</p>
+<p>5. 使用本工具即表示同意以上条款。</p>
+</div>
+
+<div class="footer">纯本地运行 | 不联网 | 不上传服务器 | 数据只存在你的浏览器里</div>
 </div>
 
 <script>
-// 默认敏感词表
 let replaceMap = {
 "张三": "【客户甲】",
 "李四": "【客户乙】",
@@ -137,55 +179,33 @@ function updateKey(idx, val) {
 const keys = Object.keys(replaceMap);
 const vals = Object.values(replaceMap);
 const oldKey = keys[idx];
-if (oldKey) {
-delete replaceMap[oldKey];
-replaceMap[val] = vals[idx] || "【代号】";
-}
+if (oldKey) { delete replaceMap[oldKey]; replaceMap[val] = vals[idx] || "【代号】"; }
 saveConfigToStorage();
 }
-
 function updateVal(idx, val) {
 const keys = Object.keys(replaceMap);
 const key = keys[idx];
 if (key) replaceMap[key] = val;
 saveConfigToStorage();
 }
-
 function deleteRow(idx) {
 const keys = Object.keys(replaceMap);
 if (keys[idx]) delete replaceMap[keys[idx]];
-renderConfigTable();
-saveConfigToStorage();
+renderConfigTable(); saveConfigToStorage();
 }
-
 function addConfigRow() {
-const newKey = "新词" + (Object.keys(replaceMap).length + 1);
-replaceMap[newKey] = "【代号X】";
+replaceMap["新词" + (Object.keys(replaceMap).length + 1)] = "【代号X】";
 renderConfigTable();
 }
-
-function saveConfig() {
-saveConfigToStorage();
-switchTab("replace");
-}
-
-function loadDefaultConfig() {
-localStorage.removeItem("replaceMap");
-loadConfig();
-renderConfigTable();
-}
-
-function escHtml(s) {
-return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
-}
+function saveConfig() { saveConfigToStorage(); switchTab("replace"); }
+function loadDefaultConfig() { localStorage.removeItem("replaceMap"); loadConfig(); renderConfigTable(); }
+function escHtml(s) { return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
 
 function doReplace() {
 const text = document.getElementById("input-text").value;
 if (!text.trim()) { alert("请输入文本"); return; }
 let result = text;
-for (const [k, v] of Object.entries(replaceMap)) {
-result = result.split(k).join(v);
-}
+for (const [k, v] of Object.entries(replaceMap)) result = result.split(k).join(v);
 document.getElementById("replace-result").textContent = result;
 document.getElementById("replace-result-wrap").style.display = "block";
 }
@@ -194,9 +214,7 @@ function doRestore() {
 const text = document.getElementById("restore-input").value;
 if (!text.trim()) { alert("请输入文本"); return; }
 let result = text;
-for (const [k, v] of Object.entries(replaceMap)) {
-result = result.split(v).join(k);
-}
+for (const [k, v] of Object.entries(replaceMap)) result = result.split(v).join(k);
 document.getElementById("restore-result").textContent = result;
 document.getElementById("restore-result-wrap").style.display = "block";
 }
